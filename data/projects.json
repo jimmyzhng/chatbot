@@ -1,0 +1,123 @@
+[
+    {
+      "title": "AI Crawler Dashboard",
+      "desc": "Web scraping app tracking the robots.txt files of the top 1000 websites to analyze block trends for web crawler bots. Updated daily with cron jobs, our web scraper identified if each site allowed or blocked each bot. If blocked, the block date is identified. Designed and built the app individually.",
+      "subDesc":
+        "Built with Vue.js, PHP, Python, MySQL, AWS, Vuetify, & Apex Charts",
+      "company": "Originality.AI",
+      "featured": true,
+      "year": "2023 - 2024",
+      "companyLink": "https://originality.ai/ai-bot-blocking"
+    },
+    {
+      "title": "Sentence Rewriter",
+      "desc": "GPT powered web tool for rewriting inputted sentences. Users can upload a url or file to have it's content parsed, then customize the output with the following selectors: language, tone, and amount. Users can then save the output, or regenerate/expand/shorten the result. ",
+      "subDesc": "Built with Vue.js, PHP, OpenAI API, Vuetify, HTML, and CSS",
+      "company": "Originality.AI",
+      "featured": true,
+      "year": "2023",
+      "companyLink": "https://originality.ai/sentence-rewriter"
+    },
+    {
+      "title": "Blog Title Generator",
+      "desc": "GPT powered web tool for generating SEO Optimized titles for an inputted blog. Key features include url and pdf parsing, language selection, and daily user rate limiting.",
+      "subDesc": "Built with Vue.js, PHP, OpenAI API, Vuetify, HTML, and CSS",
+      "company": "Originality.AI",
+      "featured": true,
+      "year": "2023"
+    },
+    {
+      "title": "Finance Dashboard",
+      "desc": "Key features include: Ability to create, edit, or delete invoices, search and pagination, authentication by user login, and server-side validation",
+      "subDesc":
+        "Built with TypeScript, React, Next.js, PostgreSQL, Tailwind.css, Vercel, Bcrypt, and more!",
+      "company": "Personal",
+      "featured": false,
+      "year": "2024"
+    },
+  
+    {
+      "title": "AiSpy",
+      "desc": "Created to manage a simulated network of surveillance cameras for a building. Key features include: object detection, real-time analytics, & motion/sound alerts.",
+      "subDesc":
+        "Built with React, Express.js, PostgreSQL, SASS, TensorFlow.js, AWS S3, and more!",
+      "company": "Bolt & Dash",
+      "featured": false,
+      "year": "2023"
+    },
+  
+    {
+      "title": "AImagine",
+      "desc": "Application that provides a platform for users to utilize AI to generate images based on a natural language description. Powered by DALL-E, users can create and upload images onto the website to share it with the community.",
+      "subDesc":
+        "Built with React, Node.js, Express.js, MongoDB, Tailwind, OpenAI API, & Cloudinary",
+      "company": "Personal",
+      "featured": false,
+      "year": "2023"
+    },
+  
+    {
+      "title": "jimmyzhng.com (v1)",
+      "desc": "First version of my website, created to showcase my portfolio while learning different animation techniques with React. Also featured a music player, allowing me to showcase some of my musical taste.",
+      "subDesc":
+        "Built with React, Framer Motion, GSAP, Animate.css, SASS, Email.js, and more!",
+      "company": "Personal",
+      "featured": false,
+      "year": "2023"
+    },
+  
+    {
+      "title": "BinIt!",
+      "desc": "Utilizes AI to sort trash based on images uploaded by the user, with the ability to differentiate between waste, recycling, compost, and paper. Created in 8 hours during Root Hacks 2023, and winner of the WiCS Award",
+      "subDesc": "Built with React, Python (Flask), HTML, and CSS",
+      "company": "SFU Hackathon",
+      "featured": false,
+      "year": "2023"
+
+    },
+    {
+      "title": "Pawhub",
+      "desc": "An application for pet owners to use as a central resource for making friends, and to discuss everything pet related. Key features include a discussion board, profile pages, explore page, resources section, and a map app utilizing the Google Maps APIfor users to find the closest vets and pet stores"
+      ,
+      "subDesc":
+        "Built with React, Ruby On Rails, Node.js, PostgreSQL, Maps API, Bootstrap, & more!",
+      "company": "Lighthouse Labs",
+      "featured": false,
+      "year": "2023"
+    },
+    {
+      "title": "Interview Scheduler",
+      "desc": "Single paged application for students to create, edit, and delete interview appointments. Utilizes an API server for a PostgreSQL database of students and interviewers. Unit, integration, and end-to-end testing completed with Storybook, Jest, and Cypress.",
+      "subDesc":
+        "Built with React, Axios, Storybook, Jest, Cypress, Testing Library",
+      "company": "Lighthouse Labs",
+      "featured": false,
+      "year": "2023"
+    },
+    {
+      "title": "dead.Stock",
+      "desc": "A buy/sell application for users to browse and list sneakers for sale. Key features include: register/login secured by BCrypt, Messaging sellers with SendGrid API, and creating or favoriting listings.",
+      "subDesc":
+        "Made with JavaScript, Node.js, Express, jQuery, PostgreSQL, SASS, & more!",
+      "company": "Lighthouse Labs",
+      "featured": false,
+      "year": "2022"
+    },
+    {
+      "title": "Tweeter",
+      "desc": "Simple, single-page Twitter clone.",
+      "subDesc": "Built with JavaScript, jQuery, Express, Node.js, HTML, CSS ",
+      "company": "Lighthouse Labs",
+      "featured": false,
+      "year": "2022"
+    },
+    {
+      "title": "TinyApp",
+      "desc": "TinyURL Clone - create, edit, or delete shortened URLs that anyone can use.",
+      "subDesc":
+        "Built with JavaScript, Node.js, Express, EJS, Mocha/Chai, and more!",
+      "company": "Lighthouse Labs",
+      "featured": false,
+      "year": "2022"
+    }
+]
