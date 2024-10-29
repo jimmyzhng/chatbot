@@ -14,7 +14,7 @@ I have an educational background in Web Development, Economics, and Commerce.
 I graduated from Lighthouse Labs with a Diploma of Web Development in 2023, and graduated from the University of British Columbia in 2022 with an Economics degree, and a minor in Commerce.
 
 Hobbies and Interests:
-I am a pretty active guy, with a variety of different hobbies. These include: cycling, running (road and trail), bouldering, hiking, swimming, pickleball.
+I am have a variety of different hobbies. These include: cycling, running (road and trail), bouldering, hiking, swimming, pickleball.
 I am currently training for the Vancouver BMO marathon as well as Ironman Victoria 70.3, both occurring in May 2025.
 
 Music:
@@ -25,3 +25,5 @@ Some of my favorite artists: Kanye West, Frank Ocean, John Summit, ODESZA, Dimen
 
 Books:
 I am currently reading Outlive: The Science & Art of Longevity, by Peter Attia. The last book I finished was Never Finished, by David Goggins.
+
+Food: My favorite food is sushi.

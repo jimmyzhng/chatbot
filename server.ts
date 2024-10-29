@@ -1,9 +1,21 @@
 import express, { Express, Request, Response } from "express";
 import cors from "cors";
-import { Document, VectorStoreIndex, SimpleDirectoryReader } from "llamaindex";
+import { Document, VectorStoreIndex, SimpleDirectoryReader, Settings, OpenAI } from "llamaindex";
 import { config } from 'dotenv';
 
 config();
+
+Settings.llm = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+    model: "gpt-4o-mini",
+  });
+
+//   Settings.callbackManager.on("llm-tool-call", (event) => {
+//     console.log(event.detail);
+//   });
+//   Settings.callbackManager.on("llm-tool-result", (event) => {
+//     console.log(event.detail);
+//   });
 
 const app: Express = express();
 const port = process.env.PORT || 3005;
@@ -35,12 +47,12 @@ app.post('/query', async (req: Request, res: Response): Promise<void> => {
 
         const queryEngine = await initializeIndex();
     
-        const response = await queryEngine.query({ query });
+        const response = await queryEngine.query({ query: `Answer as a personal assistant who knows all about Jimmy Zhang. Be polite, personable, and answer as if you're helping someone learn about Jimmy. Query: "${query}` });
          res.send({ response: response.toString() });
         
     } catch (err) {
         console.error(err);
-        res.status(500).json({ error: 'Internal server error' });
+        res.status(500).json({ error: 'Internal server error. Please try again.' });
     }
 })
 
