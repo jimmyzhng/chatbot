@@ -10,7 +10,7 @@ const pool = new Pool({
     host: process.env.LOCAL_PSQL_HOST,    
     database: process.env.LOCAL_PSQL_DB,  
     password: process.env.LOCAL_PSQL_PASS,
-    port: process.env.LOCAL_PSQL_PORT,             
+    port: Number(process.env.LOCAL_PSQL_PORT),             
 });
 
 
