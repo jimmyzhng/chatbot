@@ -10,13 +10,6 @@ Settings.llm = new OpenAI({
     model: "gpt-4o-mini",
   });
 
-//   Settings.callbackManager.on("llm-tool-call", (event) => {
-//     console.log(event.detail);
-//   });
-//   Settings.callbackManager.on("llm-tool-result", (event) => {
-//     console.log(event.detail);
-//   });
-
 const app: Express = express();
 const port = process.env.PORT || 3005;
 app.use(cors());
