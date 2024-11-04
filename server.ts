@@ -3,6 +3,8 @@ import cors from "cors";
 import { Document, VectorStoreIndex, SimpleDirectoryReader, Settings, OpenAI } from "llamaindex";
 import { config } from 'dotenv';
 
+import userRoutes from './routes/userRoutes' 
+
 config();
 
 Settings.llm = new OpenAI({
@@ -17,6 +19,8 @@ app.use(cors());
 // Middleware to use JSON body parsing
 app.use(express.json());
 
+app.use('/user', userRoutes)
+
 // Load and index documents
 async function initializeIndex() {
 
@@ -25,8 +29,8 @@ async function initializeIndex() {
     // splits text, creates embedding, then stores them in VectorStoreIndex
     const index = await VectorStoreIndex.fromDocuments(documents)
     return index.asQueryEngine()
-
 }
+
 
 app.post('/query', async (req: Request, res: Response): Promise<void> => {
 
