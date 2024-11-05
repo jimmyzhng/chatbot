@@ -13,7 +13,7 @@ router.post("/", async (req, res) => {
 
     // return uuid in an object ('id': uuid)
     res.status(201).json(result.rows[0]);
-    
+
   } catch (err) {
     console.error("Database query error:", err);
     res.status(500).send("Database Error");
