@@ -7,11 +7,13 @@ router.post("/", async (req, res) => {
   try {
     const result = await pool.query(`
             INSERT INTO users 
-            DEFAULT VALUES;
+            DEFAULT VALUES
+            RETURNING id;
             `);
 
-    // return uuid
+    // return uuid in an object ('id': uuid)
     res.status(201).json(result.rows[0]);
+    
   } catch (err) {
     console.error("Database query error:", err);
     res.status(500).send("Database Error");
