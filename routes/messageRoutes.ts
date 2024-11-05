@@ -19,4 +19,17 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.post('/', async (req, res) => {
+    const {message, sender, user_id} = req.body;
+
+    try {
+        pool.query(`
+            INSERT INTO messages
+            (message, sender, user_id)
+            VALUES ($1 $2 $3)
+            
+            `, [message, sender, user_id]
+        )
+    }
+})
 export default router;
