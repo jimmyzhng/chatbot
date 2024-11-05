@@ -7,29 +7,38 @@ router.get("/", async (req, res) => {
   const { id } = req.body;
 
   try {
-    pool.query(
+    const result = await pool.query(
       `
            SELECT * FROM messages
            WHERE id = $1 `,
       [id]
     );
+
+    res.status(201).json(result.rows[0]);
   } catch (err) {
     console.error("Database query error:", err);
     res.status(500).send("Database Error");
   }
 });
 
-router.post('/', async (req, res) => {
-    const {message, sender, user_id} = req.body;
+router.post("/", async (req, res) => {
+  const { message, sender, user_id } = req.body;
 
-    try {
-        pool.query(`
+  try {
+    const result = await pool.query(
+      `
             INSERT INTO messages
             (message, sender, user_id)
             VALUES ($1 $2 $3)
             
-            `, [message, sender, user_id]
-        )
-    }
-})
+            `,
+      [message, sender, user_id]
+    );
+    
+    res.status(201).json(result.rows[0]);
+  } catch (err) {
+    console.error("Database query error:", err);
+    res.status(500).send("Database Error");
+  }
+});
 export default router;
