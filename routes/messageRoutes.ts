@@ -13,7 +13,7 @@ Settings.llm = new OpenAI({
   // Load and index documents
 async function initializeIndex() {
 
-    const documents = await new SimpleDirectoryReader().loadData('../data')
+    const documents = await new SimpleDirectoryReader().loadData('./data')
     
     // splits text, creates embedding, then stores them in VectorStoreIndex
     const index = await VectorStoreIndex.fromDocuments(documents)
@@ -42,7 +42,7 @@ router.get("/", async (req, res) => {
 // Update DB + Query GPT
 router.post("/", async (req, res) => {  
     try {
-       const { message, sender, user_id } = req.body;
+       const { message, sender, id } = req.body;
      
        if (!message || typeof message !== 'string') {
          res.status(400).json({ error: 'Message is required.' });
@@ -52,10 +52,10 @@ router.post("/", async (req, res) => {
            `
            INSERT INTO messages
            (message, sender, user_id)
-           VALUES ($1 $2 $3)
+           VALUES ($1, $2, $3)
            
            `,
-           [message, sender, user_id]
+           [message, sender, id]
         );
         
     const queryEngine = await initializeIndex();
