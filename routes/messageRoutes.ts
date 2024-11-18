@@ -63,6 +63,17 @@ router.post("/", async (req, res) => {
         Answer as a personal assistant who knows all about Jimmy Zhang. Be polite, personable, 
         and answer as if you're helping someone learn about Jimmy. Answer in a conversation style, 
         and only answer questions that are asked. Query: "${message}` });
+
+        await pool.query(
+          `
+          INSERT INTO messages
+          (message, sender, user_id)
+          VALUES ($1, $2, $3)
+          `,
+          [chatResponse.toString(), 'assistant', id]
+      );
+
+    
     res.send({ chatResponse: chatResponse.toString() });
 
   } catch (err) {
