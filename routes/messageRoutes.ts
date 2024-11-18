@@ -22,17 +22,17 @@ async function initializeIndex() {
 
 
 router.get("/", async (req, res) => {
-  const { id } = req.body;
+  const { id } = req.query
 
   try {
     const result = await pool.query(
       `
            SELECT * FROM messages
-           WHERE id = $1 `,
+           WHERE user_id = $1 `,
       [id]
     );
 
-    res.status(201).json(result.rows[0]);
+    res.status(201).json(result.rows);
   } catch (err) {
     console.error("Database query error:", err);
     res.status(500).send("Database Error");
