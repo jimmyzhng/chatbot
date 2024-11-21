@@ -96,16 +96,14 @@ router.delete("/:id", async (req: express.Request<{ id: string }>, res: express.
       DELETE FROM messages
       WHERE user_id = $1
       `, [id])
-
-      if (dbResult.rowCount === 0) {
-        res.status(404).send("Message not found");
+      
+      if (dbResult) {
+        res.status(200).json("Message deleted successfully");
       }
-  
-      res.status(200).send("Message deleted successfully");
 
   } catch (err) {
     console.error("Server error:", err);
-    res.status(500).send("Server Error");
+    res.status(500).json("Server Error");
   }
 
 })
