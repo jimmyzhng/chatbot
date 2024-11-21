@@ -82,4 +82,32 @@ router.post("/", async (req, res) => {
   }
 });
 
+// delete method
+router.delete("/:id", async (req: express.Request<{ id: string }>, res: express.Response) => {
+  try {
+    const { id } = req.params
+
+    if (!id || typeof id !== 'string') {
+      res.status(400).json({ error: 'Invalid ID.' });
+      return;
+    }
+
+    const dbResult = await pool.query(`
+      DELETE FROM messages
+      WHERE user_id = $1
+      `, [id])
+
+      if (dbResult.rowCount === 0) {
+        res.status(404).send("Message not found");
+      }
+  
+      res.status(200).send("Message deleted successfully");
+
+  } catch (err) {
+    console.error("Server error:", err);
+    res.status(500).send("Server Error");
+  }
+
+})
+
 export default router;
