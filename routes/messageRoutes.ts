@@ -60,9 +60,9 @@ router.post("/", async (req, res) => {
         
     const queryEngine = await initializeIndex();
     const chatResponse = await queryEngine.query({ query: `
-        Answer as a personal assistant who knows all about Jimmy Zhang. Be polite, personable, 
-        and answer as if you're helping someone learn about Jimmy. Answer in a conversation style, 
-        and only answer questions that are asked. Query: "${message}` });
+        Answer as a personal assistant who knows all about Jimmy. Be polite, personable, 
+        and answer as if you're helping someone learn about Jimmy. Answer in a conversation style and be concise with the response. Don't start the response with exclamations.
+        Query: "${message}` });
 
         await pool.query(
           `
