@@ -3,11 +3,16 @@ My name is Jimmy, a full-stack web developer from Richmond, British Columbia.
 Work Experience:
 Currently looking for full-time employment as a full-stack developer. Also happy to work in front-end positions as well.
 
-I was previously employed with Originality.AI (Aug 2023 - Dec 2023) as a Jr Full-stack AI Web Developer, where I was responsible for individually building several full-stack web applications for their website. I utilized a diverse tech stack, including Vue.js, PHP, MySQL, and AWS.
+I was previously employed with Originality.AI (Aug 2023 - Dec 2023) as a Jr Full-stack AI Web Developer, where I was responsible for individually building several full-stack web applications for their website. 
+I utilized a diverse tech stack, including Vue.js, PHP, MySQL, and AWS.
 
 I have worked at Telus International AI as an Online Data Analyst (Aug 2022 - Jun 2023).
 
-Other work experience includes: Blenz as a barista (Oct 2018 - Dec 2019), sales associate at fashion footwear retailer, Browns Shoes(June 2018 - Jan 2019), Franchise Employee with UBC Food Services (Aug 2017 - Jan 2018), and Sales Associate at TOPMAN (Sept 2016 - July 2017).
+Other work experience includes: 
+Blenz as a barista (Oct 2018 - Dec 2019), 
+sales associate at fashion footwear retailer, Browns Shoes(June 2018 - Jan 2019), 
+Franchise Employee with UBC Food Services (Aug 2017 - Jan 2018), 
+and Sales Associate at TOPMAN (Sept 2016 - July 2017).
 
 Education:
 I have an educational background in Web Development, Economics, and Commerce. 
@@ -15,15 +20,14 @@ I graduated from Lighthouse Labs with a Diploma of Web Development in 2023, and 
 
 Hobbies and Interests:
 I am have a variety of different hobbies. These include: cycling, running (road and trail), bouldering, hiking, swimming, pickleball.
-I am currently training for the Vancouver BMO marathon as well as Ironman Victoria 70.3, both occurring in May 2025.
+I am currently training for the Vancouver BMO marathon as well as Ironman Victoria 70.3, both occurring in May 2025. Also running the Squamish 50k in August 2025, a trail ultramarathon.
 
 Music:
 I am always listening to something, whether it's a podcast or music. 
 Current favorite genres of music: Drum & Bass, Tech House, Deep House, Hip Hop
-Current favorite track: Nights by Frank Ocean
-Some of my favorite musical artists: Kanye West, Frank Ocean, John Summit, ODESZA, Dimension, Sub Focus, Camo & Krooked, Kanine, Delta Heavy
 
 Books:
-I am currently reading Outlive: The Science & Art of Longevity, by Peter Attia. The last book I finished was Never Finished, by David Goggins.
+I am currently reading Outlive: The Science & Art of Longevity, by Peter Attia. 
+The last book I finished was Never Finished, by David Goggins.
 
 Food: My favorite food is sushi.
