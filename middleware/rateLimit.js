@@ -2,7 +2,7 @@ import pool from "../db";
 
  const getUserById = async (userId) => {
     try {
-        const result =await pool.query(`
+        const result = await pool.query(`
             SELECT * FROM users
             where id = $1
             `, [userId])         
@@ -18,8 +18,8 @@ const updateUserMessageCount = async (userId, messageCount, lastMessageDate) => 
     try {
         await pool.query(`
             UPDATE users
-            SET messageCount = $1, LastMessageDate = $2
-            WHERE id = $3
+            SET "messageCount" = $2, "lastMessageDate" = $3
+            WHERE id = $1
             `, [userId, messageCount, lastMessageDate])
         
     } catch (err) {
@@ -31,8 +31,10 @@ const updateUserMessageCount = async (userId, messageCount, lastMessageDate) => 
 
 export const rateLimit = async (req, res, next) => {
     try {
-    const userId = req.user.id;
+    const userId = req.body.id
     const user = await getUserById(userId)
+
+    console.log('user', user)
 
     if (!user) {
         return res.status(404).json({ error: 'User not found.' });
@@ -55,8 +57,8 @@ export const rateLimit = async (req, res, next) => {
       next();
 
     } catch (err) {
-        console.error("Database update error:", err);
-        throw new Error("Database Error");
+        console.error("Error running rate limit function:", err);
+        throw new Error("Rate Limit Error.");
     }
  
 }

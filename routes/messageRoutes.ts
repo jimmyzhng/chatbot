@@ -2,6 +2,7 @@ import express, { Router } from "express";
 import { Document, VectorStoreIndex, SimpleDirectoryReader, Settings, OpenAI } from "llamaindex";
 import { config } from 'dotenv';
 import pool from "../db";
+import { rateLimit } from '../middleware/rateLimit.js'
 
 const router: Router = express.Router();
 
@@ -40,7 +41,7 @@ router.get("/", async (req, res) => {
 });
 
 // Update DB + Query GPT
-router.post("/", async (req, res) => {  
+router.post("/", rateLimit, async (req, res) => {  
     try {
        const { message, sender, id } = req.body;
      
