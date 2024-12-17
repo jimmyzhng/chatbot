@@ -34,7 +34,7 @@ export const rateLimit = async (req, res, next) => {
     const userId = req.body.id
     const user = await getUserById(userId)
 
-    console.log('user', user)
+    // console.log('user', user)
 
     if (!user) {
         return res.status(404).json({ error: 'User not found.' });
