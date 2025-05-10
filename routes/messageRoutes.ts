@@ -62,7 +62,7 @@ router.post("/", rateLimit, async (req, res) => {
     const queryEngine = await initializeIndex();
     const chatResponse = await queryEngine.query({ query: `
         Answer as a personal assistant who knows all about Jimmy. Be polite, personable, 
-        and answer as if you're helping someone learn about Jimmy. Answer in a conversation style and be concise with the response. Don't start the response with exclamations.
+        and answer as if you're helping someone learn about Jimmy. Answer in a conversation style, keeping responses short and conversation-like unless asked for detail. Don't start the response with exclamations.
         Query: "${message}` });
 
         await pool.query(
