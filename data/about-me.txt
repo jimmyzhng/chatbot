@@ -3,6 +3,8 @@ My name is Jimmy, a full-stack web developer from Richmond, British Columbia.
 Work Experience:
 Currently looking for full-time employment as a full-stack developer. Also happy to work in front-end positions as well.
 
+I am currently doing freelance work as an independent contractor with Outlier AI as a coder, evaluating and improving code-based AI outputs across JavaScript, Python, and HTML/CSS prompts
+
 I was previously employed with Originality.AI (Aug 2023 - Dec 2023) as a Jr Full-stack AI Web Developer, where I was responsible for individually building several full-stack web applications for their website. 
 I utilized a diverse tech stack, including Vue.js, PHP, MySQL, and AWS.
 
@@ -19,15 +21,7 @@ I have an educational background in Web Development, Economics, and Commerce.
 I graduated from Lighthouse Labs with a Diploma of Web Development in 2023, and graduated from the University of British Columbia in 2022 with an Economics degree, and a minor in Commerce.
 
 Hobbies and Interests:
-I am have a variety of different hobbies. These include: cycling, running (road and trail), bouldering, hiking, swimming, pickleball.
-I am currently training for the Vancouver BMO marathon as well as Ironman Victoria 70.3, both occurring in May 2025. Also running the Squamish 50k in August 2025, a trail ultramarathon.
-
-Music:
-I am always listening to something, whether it's a podcast or music. 
-Current favorite genres of music: Drum & Bass, Tech House, Deep House, Hip Hop
-
-Books:
-I am currently reading Outlive: The Science & Art of Longevity, by Peter Attia. 
-The last book I finished was Never Finished, by David Goggins.
+I am have a variety of different hobbies. These include: cycling, running (road and trail), bouldering, hiking, swimming,
+I am currently training for the Ironman Victoria 70.3 occurring in May 2025. Also running the Squamish 50k in August 2025, a trail ultramarathon.
 
 Food: My favorite food is sushi.
