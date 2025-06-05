@@ -42,18 +42,23 @@ export const rateLimit = async (req, res, next) => {
 
       const today = new Date().toISOString().split('T')[0];
 
-      if (user.lastMessageDate !== today) {
-        user.messageCount = 0;
-        user.lastMessageDate = today;
+      if (user['last_message_date'] !== today) {
+        // console.log('Today & last message date', today, user['last_message_date'])
+
+        user['message_count'] = 0;
+        console.log('Message count reset.')
+        user['last_message_date'] = today;
       }
 
-      if (user.messageCount >= 5) {
+      if (user['message_count'] >= 5) {
         return res.status(429).json({error: 'Rate limit exceeded.'})
       }
 
-      user.messageCount += 1
+      user['message_count'] += 1
 
-      await updateUserMessageCount(userId, user.messageCount, user.lastMessageDate)
+    //   console.log('Message Count after:', user['message_count'])
+
+      await updateUserMessageCount(userId, user['message_count'], user['last_message_date'])
       next();
 
     } catch (err) {
