@@ -18,7 +18,7 @@ const updateUserMessageCount = async (userId, messageCount, lastMessageDate) => 
     try {
         await pool.query(`
             UPDATE users
-            SET "messageCount" = $2, "lastMessageDate" = $3
+            SET "message_count" = $2, "last_message_date" = $3
             WHERE id = $1
             `, [userId, messageCount, lastMessageDate])
         
