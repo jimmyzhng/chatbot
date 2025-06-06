@@ -16,8 +16,22 @@ config();
 // Supabase connection
 const pool = new Pool({
     connectionString: process.env.SUPABASE_URL,
-    ssl: { rejectUnauthorized: false }
-})
+    ssl: { rejectUnauthorized: false },
+    // add connection timeout and retry settings
+    connectionTimeoutMillis: 5000,
+    idleTimeoutMillis: 30000,
+    max: 20, // max clients in pool
+});
 
+// Test connection
+pool.on('error', (err) => {
+    console.error('Unexpected error on idle client', err);
+    process.exit(-1);
+});
+
+// Log status
+pool.on('connect', () => {
+    console.log('Connected to the database');
+});
 
 export default pool;
