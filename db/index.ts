@@ -29,9 +29,4 @@ pool.on('error', (err) => {
     process.exit(-1);
 });
 
-// Log status
-pool.on('connect', () => {
-    console.log('Connected to the database');
-});
-
 export default pool;
