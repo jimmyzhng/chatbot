@@ -2,6 +2,8 @@
 
 REST API for an AI-powered chatbot found on my [website](https://www.jimmyzhng.com). This project utilizes Retrieval-Augmented Generation, an AI technique that combines the power of large language models with external knowledge bases. It retrieves the relevant info from the source and uses that to augment the LLM's generated output, resulting in improved accuracy, up-to-date information, and relevant data. In this case, the knowledge base is information about myself, and the goal of this project is to have a personal assistant that answers any questions a user may have about me.  
 
+![Demo](chatbot-gif-demo.gif)
+
 ## 🚀 Features
 
 - RESTful API architecture
