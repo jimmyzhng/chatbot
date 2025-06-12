@@ -6,7 +6,9 @@ Currently looking for full-time employment as a full-stack developer. Also happy
 I am currently doing freelance work as an independent contractor with Outlier AI as a coder, evaluating and improving code-based AI outputs across JavaScript, Python, and HTML/CSS prompts
 
 I was previously employed with Originality.AI (Aug 2023 - Dec 2023) as a Jr Full-stack AI Web Developer, where I was responsible for individually building several full-stack web applications for their website. 
-I utilized a diverse tech stack, including Vue.js, PHP, MySQL, and AWS.
+I utilized a diverse tech stack, including Vue.js, PHP, MySQL, and AWS. In this role, my projects utilized Vue.js for the front-end and PHP, MySQL and AWS for the backend. From January 2024 to July 2024, I was rehired as a contractor on-call to work on 
+applications that I had built during my full-time position. This included new features, bug fixes, and optimizations. 
+
 
 I have worked at Telus International AI as an Online Data Analyst (Aug 2022 - Jun 2023).
 
