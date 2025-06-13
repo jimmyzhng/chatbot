@@ -1,9 +1,9 @@
-import express, {Router} from "express";
+import express, {Request, Response, Router} from "express";
 import pool from "../db";
 
 const router: Router = express.Router();
 
-router.post("/", async (req, res) => {
+router.post("/", async (req: Request, res: Response) => {
   try {
     const result = await pool.query(`
             INSERT INTO users 
@@ -20,8 +20,9 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.get("/", async (req, res) => {
-  const { id } = req.body;
+router.get("/", async (req: Request<{}, {}, {}, {id: string}>, res: Response) => {
+  const { id } = req.query;
+
   try {
     const result = await pool.query(
       `
