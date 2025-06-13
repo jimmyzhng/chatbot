@@ -1,8 +1,8 @@
-import express, { Router } from "express";
+import express, { Router, Request, Response } from "express";
 import { Document, VectorStoreIndex, SimpleDirectoryReader, Settings, OpenAI } from "llamaindex";
-import { config } from 'dotenv';
 import pool from "../db";
 import { rateLimit } from '../middleware/rateLimit.js'
+import { MessageQuery } from "../types/messages.types";
 
 const router: Router = express.Router();
 
@@ -22,10 +22,16 @@ async function initializeIndex() {
 }
 
 
-router.get("/", async (req, res) => {
-  const { id } = req.query
-
+router.get("/", async (req: Request<{}, {}, {}, MessageQuery>, res: Response) => {
   try {
+    const { id } = req.query
+
+    if (!id) {
+      console.error("No user ID provided in query");
+      return res.status(400).json({ error: "User ID is required" });
+    }
+
+    console.log("Attempting to fetch messages for user:", id);
     const result = await pool.query(
       `
            SELECT * FROM messages
@@ -33,15 +39,26 @@ router.get("/", async (req, res) => {
       [id]
     );
 
-    res.status(201).json(result.rows);
-  } catch (err) {
+    console.log("Query successful, found", result.rows.length, "messages");
+    res.status(200).json(result.rows);
+    return;
+  } catch (err: any) {
     console.error("Database query error:", err);
-    res.status(500).send("Database Error");
+    console.error("Error details:", {
+      message: err.message,
+      code: err.code,
+      detail: err.detail
+    });
+    res.status(500).json({ 
+      error: "Database Error",
+      details: err.message 
+    });
   }
+  return;
 });
 
 // Update DB + Query GPT
-router.post("/", rateLimit, async (req, res) => {  
+router.post("/", rateLimit, async (req: Request, res: Response) => {  
     try {
        const { message, sender, id } = req.body;
      
