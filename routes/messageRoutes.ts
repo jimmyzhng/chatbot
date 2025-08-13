@@ -94,25 +94,26 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
             Answer as a personal assistant who knows all about Jimmy. Be polite, personable, 
             and answer as if you're helping someone learn about Jimmy. Answer in a conversation style, keeping responses short and conversation-like unless asked for detail. Don't start the response with exclamations.
             Query: "${message}` });
+            
+            const assistantDbResult = await pool.query(
+                  `
+                  INSERT INTO messages
+                  (message, sender, user_id)
+                  VALUES ($1, $2, $3)
+                  `,
+                  [chatResponse.toString(), 'assistant', id]
+            );
+        
+            if (assistantDbResult.rowCount === 0) {
+              return res.status(500).json({error: 'Failed to save assistant response'})
+            }
+            
+            res.send({ chatResponse: chatResponse.toString() });
       } catch (aiError) {
         console.error("AI service error:", aiError);
         return res.status(500).json({ error: 'Failed to generate response' });
       }        
 
-    const assistantDbResult = await pool.query(
-          `
-          INSERT INTO messages
-          (message, sender, user_id)
-          VALUES ($1, $2, $3)
-          `,
-          [chatResponse.toString(), 'assistant', id]
-    );
-
-    if (assistantDbResult.rowCount === 0) {
-      return res.status(500).json({error: 'Failed to save assistant response'})
-    }
-    
-    res.send({ chatResponse: chatResponse.toString() });
 
   } catch (err) {
     console.error("Server error:", err);
