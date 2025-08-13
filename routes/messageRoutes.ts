@@ -1,7 +1,7 @@
 import express, { Router, Request, Response } from "express";
 import { Document, VectorStoreIndex, SimpleDirectoryReader, Settings, OpenAI } from "llamaindex";
 import pool from "../db";
-import { rateLimit } from '../middleware/rateLimit.js'
+import { rateLimit } from '../middleware/rateLimit'
 import { MessageQuery } from "../types/messages.types";
 
 const router: Router = express.Router();
@@ -62,10 +62,16 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
     try {
        const { message, sender, id } = req.body;
      
-       if (!message || typeof message !== 'string') {
-         res.status(400).json({ error: 'Message is required.' });
+        if (!message || typeof message !== 'string') {
+         res.status(400).json({ error: 'Message (string) is required.' });
          return;
         }
+
+        if (!id) {
+          console.error("No user ID provided in query");
+          return res.status(400).json({ error: "User ID is required" });
+        }
+
        const dbResult = await pool.query(
            `
            INSERT INTO messages
