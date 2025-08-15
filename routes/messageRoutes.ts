@@ -63,7 +63,7 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
        const { message, sender, id } = req.body;
      
         if (!message || typeof message !== 'string') {
-         res.status(400).json({ error: 'Message (string) is required.' });
+         res.status(400).json({ error: 'Message (string) is required' });
          return;
         }
 
