@@ -111,10 +111,5 @@ describe('Message Routes', () => {
             expect.stringContaining('INSERT INTO messages'),
             [expect.any(String), 'assistant', 123]
         )
-
     })
-
-
-
-
 })
