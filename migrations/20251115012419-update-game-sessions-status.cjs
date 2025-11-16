@@ -3,7 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.createTable('game_sessions', {
+    await queryInterface.createTable('game_stats', {
       id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -19,22 +19,17 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      status: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        defaultValue: "in_progress"
+      wins: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0
       },
-      state: {
-        type: Sequelize.JSON,
+      losses: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0
       },
-      started_at: {
-        type: Sequelize.DATE,
-        allowNull: false,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
-      },
-      ended_at: {
-        type: Sequelize.DATE,
-        allowNull: true,
+      draws: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0
       },
       created_at: {
         type: Sequelize.DATE,
@@ -45,11 +40,11 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
         defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
-      },
+      }
     });
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.dropTable('game_sessions');
+    await queryInterface.dropTable('game_stats');
   }
 };
