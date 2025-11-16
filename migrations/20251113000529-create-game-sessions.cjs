@@ -26,6 +26,11 @@ module.exports = {
       },
       state: {
         type: Sequelize.JSON,
+        allowNull: true
+      },
+      result: {
+        type: Sequelize.STRING,
+        allowNull: true,
       },
       started_at: {
         type: Sequelize.DATE,
