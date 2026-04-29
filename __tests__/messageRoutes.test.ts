@@ -1,4 +1,3 @@
-import { Request } from "express";
 import messageRoutes from '../routes/messageRoutes';
 import express from 'express';
 import request from 'supertest';

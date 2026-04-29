@@ -1,4 +1,5 @@
-import {Pool} from 'pg';
+import pg from 'pg';
+const { Pool } = pg;
 import { config } from 'dotenv';
 
 
@@ -14,7 +15,7 @@ config();
 // });
 
 // Supabase connection
-const pool: Pool = new Pool({
+const pool = new Pool({
     connectionString: process.env.SUPABASE_DIRECT_URL,
     ssl: { rejectUnauthorized: false },
     // add connection timeout and retry settings
