@@ -35,5 +35,10 @@
     "pg": "^8.13.1",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.37.5"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "buffer-equal-constant-time@1.0.1": "patches/buffer-equal-constant-time@1.0.1.patch"
+    }
   }
 }
