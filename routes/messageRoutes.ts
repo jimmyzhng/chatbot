@@ -7,18 +7,18 @@ import { MessageQuery } from "../types/messages.types";
 const router: Router = express.Router();
 
 Settings.llm = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
-    model: "gpt-4o-mini",
-  });
+  apiKey: process.env.OPENAI_API_KEY,
+  model: "gpt-5.4-nano",
+});
 
-  // Load and index documents
+// Load and index documents
 async function initializeIndex() {
 
-    const documents = await new SimpleDirectoryReader().loadData('./data')
-    
-    // splits text, creates embedding, then stores them in VectorStoreIndex
-    const index = await VectorStoreIndex.fromDocuments(documents)
-    return index.asQueryEngine()
+  const documents = await new SimpleDirectoryReader().loadData('./data')
+
+  // splits text, creates embedding, then stores them in VectorStoreIndex
+  const index = await VectorStoreIndex.fromDocuments(documents)
+  return index.asQueryEngine()
 }
 
 
@@ -49,70 +49,72 @@ router.get("/", async (req: Request<{}, {}, {}, MessageQuery>, res: Response) =>
       code: err.code,
       detail: err.detail
     });
-    res.status(500).json({ 
+    res.status(500).json({
       error: "Database Error",
-      details: err.message 
+      details: err.message
     });
   }
   return;
 });
 
 // Update DB + Query GPT
-router.post("/", rateLimit, async (req: Request, res: Response) => {  
-    try {
-       const { message, sender, id } = req.body;
-     
-        if (!message || typeof message !== 'string') {
-         res.status(400).json({ error: 'Message (string) is required' });
-         return;
-        }
+router.post("/", rateLimit, async (req: Request, res: Response) => {
+  try {
+    const { message, sender, id } = req.body;
 
-        if (!id) {
-          console.error("No user ID provided in query");
-          return res.status(400).json({ error: "User ID is required" });
-        }
+    if (!message || typeof message !== 'string') {
+      res.status(400).json({ error: 'Message (string) is required' });
+      return;
+    }
 
-       const dbResult = await pool.query(
-           `
+    if (!id) {
+      console.error("No user ID provided in query");
+      return res.status(400).json({ error: "User ID is required" });
+    }
+
+    const dbResult = await pool.query(
+      `
            INSERT INTO messages
            (message, sender, user_id)
            VALUES ($1, $2, $3)
            
            `,
-           [message, sender, id]
-        );
+      [message, sender, id]
+    );
 
-        if (dbResult.rowCount === 0) {
-          return res.status(500).json({ error: 'Failed to save user message' });
-      }
+    if (dbResult.rowCount === 0) {
+      return res.status(500).json({ error: 'Failed to save user message' });
+    }
 
-      let chatResponse;
+    let chatResponse;
 
-      try {
-        const queryEngine = await initializeIndex();
-        chatResponse = await queryEngine.query({ query: `
+    try {
+      const queryEngine = await initializeIndex();
+      chatResponse = await queryEngine.query({
+        query: `
             Answer as a personal assistant who knows all about Jimmy. Be polite, personable, 
             and answer as if you're helping someone learn about Jimmy. Answer in a conversation style, keeping responses short and conversation-like unless asked for detail. Don't start the response with exclamations.
-            Query: "${message}` });
-            
-            const assistantDbResult = await pool.query(
-                  `
+            Query: "${message}`
+      });
+
+      const assistantDbResult = await pool.query(
+        `
                   INSERT INTO messages
                   (message, sender, user_id)
                   VALUES ($1, $2, $3)
                   `,
-                  [chatResponse.toString(), 'assistant', id]
-            );
-        
-            if (assistantDbResult.rowCount === 0) {
-              return res.status(500).json({error: 'Failed to save assistant response'})
-            }
-            
-            res.send({ chatResponse: chatResponse.toString() });
-      } catch (aiError) {
-        console.error("AI service error:", aiError);
-        return res.status(500).json({ error: 'Failed to generate response' });
-      }        
+        [chatResponse.toString(), 'assistant', id]
+      );
+
+      if (assistantDbResult.rowCount === 0) {
+        return res.status(500).json({ error: 'Failed to save assistant response' })
+      }
+
+      res.send({ chatResponse: chatResponse.toString() });
+    } catch (aiError) {
+      console.error("AI service error:", aiError);
+      return res.status(500).json({ error: 'Failed to generate response' });
+    }
 
 
   } catch (err) {
@@ -135,10 +137,10 @@ router.delete("/:id", async (req: express.Request<{ id: string }>, res: express.
       DELETE FROM messages
       WHERE user_id = $1
       `, [id])
-      
-      if (dbResult) {
-        res.status(200).json("Message deleted successfully");
-      }
+
+    if (dbResult) {
+      res.status(200).json("Message deleted successfully");
+    }
 
   } catch (err) {
     console.error("Server error:", err);
