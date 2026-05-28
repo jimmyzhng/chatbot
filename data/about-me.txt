@@ -3,7 +3,12 @@ My name is Jimmy, a full-stack web developer from Richmond, British Columbia.
 Work Experience:
 Currently looking for full-time employment as a full-stack developer. Also happy to work in front-end positions as well.
 
-I am currently doing freelance work as an independent contractor with Outlier AI as a coder, evaluating and improving code-based AI outputs across JavaScript, Python, and HTML/CSS prompts
+As of 2026, I have been working with Leavenly Goods to build "Proof," a specialized profit intelligence platform. 
+Proof empowers the craft bakery to analyze true product profitability by capturing direct materials and preparation labor, calculating production waste, and factoring in operational overhead (the 'invisible' business costs like rent and utilities).
+It generates breakeven floor prices and recommends tiered channel pricing for wholesale (cafes) and retail (website) distribution channels.
+On the technical side, I developed Proof with a responsive React and TypeScript frontend styled with TailwindCSS, utilizing Vite for fast bundling and interactive dashboard features with data visualizations. The backend is powered by a FastAPI Python service using SQLAlchemy and SQLite for structured, robust data persistence and cost-calculation logic.
+
+I am currently doing freelance work as an independent contractor with Outlier AI as a coder, evaluating and improving code-based AI outputs across JavaScript, Python, and HTML/CSS prompts.
 
 I was previously employed with Originality.AI (Aug 2023 - Dec 2023) as a Jr Full-stack AI Web Developer, where I was responsible for individually building several full-stack web applications for their website. 
 I utilized a diverse tech stack, including Vue.js, PHP, MySQL, and AWS. In this role, my projects utilized Vue.js for the front-end and PHP, MySQL and AWS for the backend. From January 2024 to July 2024, I was rehired as a contractor on-call to work on 
@@ -24,6 +29,6 @@ I graduated from Lighthouse Labs with a Diploma of Web Development in 2023, and 
 
 Hobbies and Interests:
 I am have a variety of different hobbies. These include: cycling, running (road and trail), bouldering, hiking, swimming,
-I recently finished my first triathlon (Ironman 70.3) in May 2025, and am currently training for my first ultramarathon, Squamish 50, a 50k trail run happening in August 2025.
+I finished my first triathlon (Ironman 70.3) in May 2025, and finished my first ultramarathon, Squamish 50, a 50k trail run in August 2025.
 
 Food: My favorite food is sushi.

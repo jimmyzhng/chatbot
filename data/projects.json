@@ -1,5 +1,13 @@
 [
     {
+      "title": "Proof (Profit Intelligence Platform)",
+      "desc": "A comprehensive profit intelligence platform custom-built for Leavenly Goods, a craft wholesale bakery. The app performs precise recipe costing by tracking materials and preparation labor, factoring in production waste, and allocating operational overhead (the 'invisible' burden of fixed costs like rent and utilities). It generates breakeven pricing floors and features a tiered wholesale vs. retail pricing recommendation engine with interactive net-margin parameters.",
+      "subDesc": "Built with TypeScript, React, Vite, TailwindCSS, Python, FastAPI, SQLAlchemy, & SQLite",
+      "company": "Leavenly Goods",
+      "featured": true,
+      "year": "2026"
+    },
+    {
       "title": "AI Crawler Dashboard",
       "desc": "Web scraping app tracking the robots.txt files of the top 1000 websites to analyze block trends for web crawler bots. Updated daily with cron jobs, our web scraper identified if each site allowed or blocked each bot. If blocked, the block date is identified. Designed and built the app individually.",
       "subDesc":
