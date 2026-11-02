@@ -1,9 +1,12 @@
 My name is Jimmy, a full-stack web developer from Richmond, British Columbia. 
 
 Work Experience:
-Currently looking for full-time employment as a full-stack developer. Also happy to work in front-end positions as well.
 
-As of 2026, I have been working with Leavenly Goods to build "Proof," a specialized profit intelligence platform. 
+Currently looking for full-time employment as a full-stack developer.
+
+Since July 2026, have been working at Dan D Foods as an IT Analyst building web applications using React, TypeScript, PHP and MSSQL.
+
+I previously worked with Leavenly Goods to build "Proof," a specialized profit intelligence platform. 
 Proof empowers the craft bakery to analyze true product profitability by capturing direct materials and preparation labor, calculating production waste, and factoring in operational overhead (the 'invisible' business costs like rent and utilities).
 It generates breakeven floor prices and recommends tiered channel pricing for wholesale (cafes) and retail (website) distribution channels.
 On the technical side, I developed Proof with a responsive React and TypeScript frontend styled with TailwindCSS, utilizing Vite for fast bundling and interactive dashboard features with data visualizations. The backend is powered by a FastAPI Python service using SQLAlchemy and SQLite for structured, robust data persistence and cost-calculation logic.
